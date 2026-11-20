@@ -27,25 +27,23 @@ includes/     layout compartilhado, funções, sessão e proteção CSRF
 pages/        dashboard e telas dos módulos
 actions/      processamento POST e exportação CSV
 index.php     dashboard
-Funcionalidades
-CRUD de produtos, endereços e transportadores; registros relacionados a fretes são protegidos por chaves estrangeiras.
+```
 
-Consulta de CEP pelo ViaCEP ao sair do campo CEP.
+## Funcionalidades
 
-Emissão de frete com vários produtos, validação no servidor e transação PDO para gravar frete e itens atomicamente.
+- CRUD de produtos, endereços e transportadores; registros relacionados a fretes são protegidos por chaves estrangeiras.
+- Consulta de CEP pelo ViaCEP ao sair do campo CEP.
+- Emissão de frete com vários produtos, validação no servidor e transação PDO para gravar frete e itens atomicamente.
+- Dashboard com indicadores e fretes recentes.
+- Relatório por data com peso total, valor dos fretes e exportação CSV com BOM UTF-8 para Excel.
+- Consultas parametrizadas, escape de saída HTML e token CSRF nos formulários de alteração.
 
-Dashboard com indicadores e fretes recentes.
+## Dados de demonstração
 
-Relatório por data com peso total, valor dos fretes e exportação CSV com BOM UTF-8 para Excel.
-
-Consultas parametrizadas, escape de saída HTML e token CSRF nos formulários de alteração.
-
-Dados de demonstração
 O schema inclui produtos, endereços, transportadores e um frete com dois produtos. Os comandos de seed são idempotentes para poder importar novamente sem duplicar os registros de exemplo.
 
-Observações
-O CSV é protegido contra conteúdo que possa ser interpretado como fórmula por planilhas.
+## Observações
 
-A aplicação foi projetada para ambiente local de desenvolvimento. Antes de disponibilizar na internet, configure credenciais próprias, HTTPS, logs/monitoramento e políticas de acesso adequadas.
-
-O arquivo SQL não cria usuário nem altera a senha do MySQL; isso permanece sob controle da configuração do XAMPP.
+- O CSV é protegido contra conteúdo que possa ser interpretado como fórmula por planilhas.
+- A aplicação foi projetada para ambiente local de desenvolvimento. Antes de disponibilizar na internet, configure credenciais próprias, HTTPS, logs/monitoramento e políticas de acesso adequadas.
+- O arquivo SQL não cria usuário nem altera a senha do MySQL; isso permanece sob controle da configuração do XAMPP.
